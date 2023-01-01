@@ -7,23 +7,6 @@
         http://www.springframework.org/schema/mvc
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
         
-	<mvc:resources location="/public/" mapping="/**"></mvc:resources>
-    
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    	<property name="prefix" value="/WEB-INF/view/"></property>
-    	<property name="suffix" value=".jsp"></property>
-    	<property name="order" value="2" />
-    </bean>
-
-    <bean id="/player/list" class="net.mcnal.mysterya.controller.player.ListController">  
-    	<property name="listService" ref="listService"></property>
-    </bean>
-    <bean id="/player/summary" class="net.mcnal.mysterya.controller.player.SummaryController">  
-    	<property name="listService" ref="listService"></property>
-    	<property name="summaryService" ref="summaryService"></property>
-    </bean>
-     <bean id="/" class="net.mcnal.mysterya.controller.IndexController">  
-    </bean>
     
     <bean id="listService" class="net.mcnal.mysterya.service.PlayerListService">
     	<property name="playerdao" ref="playerdao"></property>
@@ -43,12 +26,4 @@
     	<property name="password" value="votmdnjem"/>
     </bean>
     
-	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-		<property name="definitions" value="/WEB-INF/tiles.xml" />
-	</bean>
-	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-		<property name="viewClass"
-			value="org.springframework.web.servlet.view.tiles3.TilesView" />
-		<property name="order" value="1" />
-	</bean>
 </beans>

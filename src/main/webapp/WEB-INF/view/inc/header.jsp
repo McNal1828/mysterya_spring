@@ -3,7 +3,7 @@
 <header class="position-sticky" style="top: 0; z-index: 100">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
 		<div class="container-fluid">
-			<a class="navbar-brand fs-3 fw-bold" href="/Mysterya"> <img
+			<a class="navbar-brand fs-3 fw-bold" href="${pageContext.request.contextPath}"> <img
 				src="${pageContext.request.contextPath}/Mysterya/image/favicon.png"
 				alt="" 
 				width="40" 
