@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
-        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
-        
-	<mvc:resources location="/public/" mapping="/**"></mvc:resources>
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:component-scan base-package="net.mcnal.mysterya.controller"></context:component-scan>
+    <mvc:annotation-driven></mvc:annotation-driven>
+    
+    <mvc:resources location="/public/" mapping="/**"></mvc:resources>
     
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     	<property name="prefix" value="/WEB-INF/view/"></property>
@@ -16,16 +22,12 @@
     </bean>
 
     <bean id="/player/list" class="net.mcnal.mysterya.controller.player.ListController">  
-    	<property name="listService" ref="listService"></property>
     </bean>
     <bean id="/player/summary" class="net.mcnal.mysterya.controller.player.SummaryController">  
-    	<property name="listService" ref="listService"></property>
-    	<property name="summaryService" ref="summaryService"></property>
     </bean>
-     <bean id="/" class="net.mcnal.mysterya.controller.IndexController">  
-    </bean>
+<!--     <bean id="/" class="net.mcnal.mysterya.controller.IndexController">  
+    </bean> -->
     
-        
 	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions" value="/WEB-INF/tiles.xml" />
 	</bean>

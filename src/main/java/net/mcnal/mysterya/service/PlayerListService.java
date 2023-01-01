@@ -3,16 +3,18 @@ package net.mcnal.mysterya.service;
 import java.sql.Array;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import net.mcnal.mysterya.DAO.IPlayerDAO;
 import net.mcnal.mysterya.entity.PlayerEntity;
 
+@Service
 public class PlayerListService implements IPlayerListService{
-
-	private IPlayerDAO playerdao;
 	
-	public void setPlayerdao(IPlayerDAO playerdao) {
-		this.playerdao = playerdao;
-	}
+	@Autowired
+	private IPlayerDAO playerdao;
+
 		
 	public List<PlayerEntity> getPlayerList() {
 		List<PlayerEntity> list = playerdao.getPlayerList();

@@ -12,18 +12,23 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import net.mcnal.mysterya.entity.PlayerEntity;
 import net.mcnal.mysterya.entity.PlayerHitEntity;
 import net.mcnal.mysterya.entity.PlayerSummaryEntity;
 
+@Repository
 public class PlayerDAO implements IPlayerDAO {
 	
-	
+	@Autowired
 	private DataSource dataSource;
 	private Connection conn = null;
 	private ResultSet rs = null;
 	private PreparedStatement pstmt = null;
 	private Statement stmt = null;
+	
 	
 	public PlayerDAO() {
 	}

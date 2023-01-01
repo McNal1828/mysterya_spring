@@ -6,6 +6,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -17,7 +18,9 @@ import net.mcnal.mysterya.service.IPlayerSummaryService;
 
 public class SummaryController implements Controller{
 	
+	@Autowired
 	private IPlayerSummaryService summaryService;
+	@Autowired
 	private IPlayerListService listService;
 	
 	public void setSummaryService(IPlayerSummaryService service) {

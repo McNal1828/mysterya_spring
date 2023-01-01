@@ -2,18 +2,18 @@ package net.mcnal.mysterya.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import net.mcnal.mysterya.DAO.IPlayerDAO;
 import net.mcnal.mysterya.entity.PlayerHitEntity;
 import net.mcnal.mysterya.entity.PlayerSummaryEntity;
 
+@Service
 public class PlayerSummaryService implements IPlayerSummaryService {
-	
+	@Autowired
 	private IPlayerDAO playerdao;
 	
-	public void setPlayerdao(IPlayerDAO playerdao) {
-		this.playerdao = playerdao;
-	}
-
 	public List<PlayerSummaryEntity> getPlayerSummary(int number){
 		List<PlayerSummaryEntity> list = playerdao.getSummary(number);
 		return list;
