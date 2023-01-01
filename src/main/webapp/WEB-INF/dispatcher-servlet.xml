@@ -7,8 +7,6 @@
         http://www.springframework.org/schema/mvc
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
         
-	<mvc:resources location="/public/" mapping="/**"></mvc:resources>
-    
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     	<property name="prefix" value="/WEB-INF/view/"></property>
     	<property name="suffix" value=".jsp"></property>
@@ -42,6 +40,8 @@
     	<property name="username" value="dbwj"/>
     	<property name="password" value="votmdnjem"/>
     </bean>
+    
+    <mvc:resources location="/public/" mapping="/**"></mvc:resources>
     
 	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions" value="/WEB-INF/tiles.xml" />

@@ -4,7 +4,10 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
 		<div class="container-fluid">
 			<a class="navbar-brand fs-3 fw-bold" href="/Mysterya"> <img
-				src="/Mysterya/image/favicon.png" alt="" width="40" height="40" />
+				src="${pageContext.request.contextPath}/Mysterya/image/favicon.png"
+				alt="" 
+				width="40" 
+				height="40" />
 				Mysterya
 			</a>
 			<button class="navbar-toggler" type="button"
@@ -16,10 +19,10 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/Mysterya">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="/Mysterya/player/list">선수단</a></li>
-					<li class="nav-item"><a class="nav-link" href="/Mysterya/player/summary?n=${smynum}">내정보</a></li>
-					<li class="nav-item"><a class="nav-link" href="/Mysterya/ranking/list">랭킹</a></li>
+						aria-current="page" href="${pageContext.request.contextPath}">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/player/list">선수단</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/player/summary?n=${smynum}">내정보</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ranking/list">랭킹</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">

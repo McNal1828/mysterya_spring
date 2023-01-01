@@ -582,7 +582,6 @@ public class PlayerDAO implements IPlayerDAO {
 				String university= rs.getString(10);
 				String support = rs.getString(11);
 				players_ = new PlayerEntity(number1, name, birth_year, birth_month, birth_day, handed, element_school, middle_school, high_school, university, support);
-				playerss_ = new PlayerEntity(number1, name, birth_year, birth_month, birth_day, handed, element_school, middle_school, high_school, university, support);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

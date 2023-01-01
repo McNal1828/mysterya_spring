@@ -7,11 +7,11 @@
 		<c:forEach var="li" items="${listPlayer}">
 		<div class="col-md-3 col-sm-2 col-lg-3 col-xl-2">
 			<div class="card mb-3" style="width: auto;">
-				<img src="/Mysterya/image/profile/${li.numberr}.jpg" class="card-img-top img-thumbnail">
+				<img src="${pageContext.request.contextPath}/Mysterya/image/profile/${li.numberr}.jpg" class="card-img-top img-thumbnail">
 				<div class="card-body">
-					<img src="/Mysterya/image/support/${li.support}.png" class="img-fluid float-end" width="60" height="60">
+					<img src="${pageContext.request.contextPath}/Mysterya/image/support/${li.support}.png" class="img-fluid float-end" width="60" height="60">
 					<h5 class="card-title">No.${li.numberr}<br>${li.name}</h5>
-					<a href="/Mysterya/player/summary?n=${li.numberr}" class="btn btn-dark">선택</a>
+					<a href="${pageContext.request.contextPath}/player/summary?n=${li.numberr}" class="btn btn-dark">선택</a>
 				</div>
 			</div>
 			</div>

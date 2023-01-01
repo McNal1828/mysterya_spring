@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <main class="container">
 		<div class="mb-5 pb-4">
-		<img src="/Mysterya/image/MysteryaLogo.png" class="rounded img-thumbnail img-fluid mx-auto d-block" width="500" />
+		<img src="${pageContext.request.contextPath}/Mysterya/image/MysteryaLogo.png" class="rounded img-thumbnail img-fluid mx-auto d-block" width="500" />
 		</div>
 		
 		<div class="row">
