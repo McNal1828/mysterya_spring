@@ -7,13 +7,13 @@
 			<h2 class="pb-4 mb-4 mt-4 fw-bold fst-italic border-bottom">리그별</h2>
 			<ul class="list-group">
 				<c:forEach var="ll" items="${listLeague}">
-				<li class="list-group-item"><a href="/Mysterya/ranking/detail?l=${ll.g}" class="alert-link">${ll.name}</a></li>
+				<li class="list-group-item"><a href="/Mysterya/ranking/league/${ll['index']}" class="alert-link">${ll['name']} (${ll['division']})</a></li>
 				</c:forEach>
 			</ul>
 			<h2 class="pb-4 mb-4 mt-4 fw-bold fst-italic border-bottom">년도별</h2>
 			<ul class="list-group">
 				<c:forEach var="ly" items="${listyear}">
-				<li class="list-group-item"><a href="/Mysterya/ranking/detail?y=${ly.g}" class="alert-link">${ly.g}</a></li>
+				<li class="list-group-item"><a href="/Mysterya/ranking/year/${ly['year']}" class="alert-link">${ly['year']}</a></li>
 				</c:forEach>
 			</ul>
 		</div>

@@ -26,8 +26,8 @@ public class RankingController {
 	
 	@RequestMapping("/list")
 	public String list(Model model, @CookieValue(value = "mynum",required = false) Cookie myNumCookie) {
-		model.addAttribute("yearList", listService.getRankingYearList());
-		model.addAttribute("leagueList", listService.getRankingLeagueList());
+		model.addAttribute("listyear", listService.getRankingYearList());
+		model.addAttribute("listLeague", listService.getRankingLeagueList());
 		if(myNumCookie != null) {
 			String myNum = myNumCookie.getValue();
 			model.addAttribute("mynum", myNum);

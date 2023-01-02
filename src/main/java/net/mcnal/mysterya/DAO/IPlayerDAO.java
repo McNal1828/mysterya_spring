@@ -15,7 +15,7 @@ public interface IPlayerDAO {
 	List<HashMap<String, Object>> getPaTurn(int number);
 	List<HashMap<String, Object>> getPaETC(int number);
 	List<HashMap<String, Object>> getPaBallcount(int number);
-	List<HashMap<String, Object>> getPlayerList();
+	List<HashMap<String, Object>> getPlayerList(String cat, String input);
 	HashMap<String, Object> getPlayerDetail(int number);
 	List<List<HashMap<String, Object>>> getPaHowbase(int number);
 }

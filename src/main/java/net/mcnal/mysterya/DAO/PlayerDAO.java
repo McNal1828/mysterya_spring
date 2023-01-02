@@ -108,10 +108,12 @@ public class PlayerDAO implements IPlayerDAO {
 		}
 		return list;
 	}
+	
 	@Override
-	public List<HashMap<String, Object>> getPlayerList() {
+	public List<HashMap<String, Object>> getPlayerList(String cat, String input) {
 		System.out.println("getPlayerList");
-		String sql = "SELECT * FROM player";
+		/* String sql = "SELECT * FROM player"; */
+		String sql = String.format("select * from player where %s like '%%%s%%'",cat,input);
 		List<HashMap<String, Object>> list = querySTResult(sql);
 		return list;
 	}
@@ -219,4 +221,6 @@ public class PlayerDAO implements IPlayerDAO {
 		list.add(list3);
 		return list;
 	}
+
+
 }

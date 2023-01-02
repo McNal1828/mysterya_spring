@@ -15,8 +15,8 @@ public class PlayerListService implements IPlayerListService{
 	private IPlayerDAO playerdao;
 
 		
-	public List<HashMap<String, Object>> getPlayerList() {
-		List<HashMap<String, Object>> list = playerdao.getPlayerList();
+	public List<HashMap<String, Object>> getPlayerList(String cat, String input) {
+		List<HashMap<String, Object>> list = playerdao.getPlayerList(cat,input);
 		return list;
 	}
 

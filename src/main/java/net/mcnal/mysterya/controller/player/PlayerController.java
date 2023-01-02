@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import net.mcnal.mysterya.service.IPlayerListService;
 import net.mcnal.mysterya.service.IPlayerSummaryService;
@@ -26,8 +27,8 @@ public class PlayerController {
 	private IPlayerSummaryService summaryService;
 	
 	@RequestMapping("/list")
-	public String list(Model model,@CookieValue(value = "mynum", required = false) Cookie myNumCookie) {
-		model.addAttribute("listPlayer", listService.getPlayerList());
+	public String list(Model model,@CookieValue(value = "mynum", required = false) Cookie myNumCookie,@RequestParam(name = "cat", defaultValue = "number") String cat,@RequestParam(name = "input", defaultValue = "") String input) {
+		model.addAttribute("listPlayer", listService.getPlayerList(cat, input));
 		if(myNumCookie != null) {
            String myNum = myNumCookie.getValue();
            model.addAttribute("mynum", myNum);
