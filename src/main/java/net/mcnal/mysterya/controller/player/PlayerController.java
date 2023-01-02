@@ -17,7 +17,7 @@ import net.mcnal.mysterya.service.IPlayerSummaryService;
 
 
 @Controller
-@RequestMapping("/player/")
+@RequestMapping("/player")
 public class PlayerController {
 	
 	@Autowired
@@ -25,7 +25,7 @@ public class PlayerController {
 	@Autowired
 	private IPlayerSummaryService summaryService;
 	
-	@RequestMapping("list")
+	@RequestMapping("/list")
 	public String list(Model model,@CookieValue(value = "mynum", required = false) Cookie myNumCookie) {
 		model.addAttribute("listPlayer", listService.getPlayerList());
 		if(myNumCookie != null) {
@@ -34,7 +34,7 @@ public class PlayerController {
 		}
 		return "player.list";
 	}
-	@RequestMapping({"summary/{number}","summary"})
+	@RequestMapping({"/summary/{number}","/summary"})
 	public String detail(Model model, @PathVariable(required = false) String number, @CookieValue(value = "mynum", required = false) Cookie myNumCookie) {
 		if(myNumCookie != null) {
 	           String myNum = myNumCookie.getValue();
