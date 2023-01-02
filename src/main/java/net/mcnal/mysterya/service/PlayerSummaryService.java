@@ -1,63 +1,66 @@
 package net.mcnal.mysterya.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.mcnal.mysterya.DAO.IPlayerDAO;
-import net.mcnal.mysterya.entity.PlayerHitEntity;
-import net.mcnal.mysterya.entity.PlayerSummaryEntity;
 
 @Service
 public class PlayerSummaryService implements IPlayerSummaryService {
 	@Autowired
 	private IPlayerDAO playerdao;
 	
-	public List<PlayerSummaryEntity> getPlayerSummary(int number){
-		List<PlayerSummaryEntity> list = playerdao.getSummary(number);
+	public HashMap<String, Object> getPlayerDetail(int number){
+		HashMap<String, Object> data = playerdao.getPlayerDetail(number);
+		return data;
+	}
+	public List<HashMap<String, Object>> getPlayerSummary(int number){
+		List<HashMap<String, Object>> list = playerdao.getSummary(number);
 		return list;
 	}
-	public List<PlayerSummaryEntity> getPlayerSummaryLeague(int number){
-		List<PlayerSummaryEntity> list = playerdao.getSummaryLeague(number);
+	public List<HashMap<String, Object>> getPlayerSummaryLeague(int number){
+		List<HashMap<String, Object>> list = playerdao.getSummaryLeague(number);
 		return list;
 	}
-	public List<PlayerSummaryEntity> getPlayerSummaryYear(int number){
-		List<PlayerSummaryEntity> list = playerdao.getSummaryYear(number);
+	public List<HashMap<String, Object>> getPlayerSummaryYear(int number){
+		List<HashMap<String, Object>> list = playerdao.getSummaryYear(number);
 		return list;
 	}
-	public List<PlayerHitEntity> getPaBalltotal(int number){
-		List<PlayerHitEntity> list = playerdao.getPaBalltotal(number);
+	public List<HashMap<String, Object>> getPaBalltotal(int number){
+		List<HashMap<String, Object>> list = playerdao.getPaBalltotal(number);
 		return list;
 	} 
-	public List<PlayerHitEntity> getPaDirection(int number){
-		List<PlayerHitEntity> list = playerdao.getPaDirection(number);
+	public List<HashMap<String, Object>> getPaDirection(int number){
+		List<HashMap<String, Object>> list = playerdao.getPaDirection(number);
 		return list;
 	} 
-	public List<PlayerHitEntity> getPaOut(int number){
-		List<PlayerHitEntity> list = playerdao.getPaOut(number);
+	public List<HashMap<String, Object>> getPaOut(int number){
+		List<HashMap<String, Object>> list = playerdao.getPaOut(number);
 		return list;
 	} 
-	public List<PlayerHitEntity> getPaTobase(int number){
-		List<PlayerHitEntity> list = playerdao.getPaTobase(number);
+	public List<HashMap<String, Object>> getPaTobase(int number){
+		List<HashMap<String, Object>> list = playerdao.getPaTobase(number);
 		return list;
 	} 
-	public List<PlayerHitEntity> getPaTurn(int number){
-		List<PlayerHitEntity> list = playerdao.getPaTurn(number);
+	public List<HashMap<String, Object>> getPaTurn(int number){
+		List<HashMap<String, Object>> list = playerdao.getPaTurn(number);
 		return list;
 	} 
-	public List<PlayerHitEntity> getPaETC(int number){
-		List<PlayerHitEntity> list = playerdao.getPaETC(number);
+	public List<HashMap<String, Object>> getPaETC(int number){
+		List<HashMap<String, Object>> list = playerdao.getPaETC(number);
 		return list;
 	} 
-	public List<PlayerHitEntity> getPaBallcount(int number){
-		List<PlayerHitEntity> list = playerdao.getPaBallcount(number);
+	public List<HashMap<String, Object>> getPaBallcount(int number){
+		List<HashMap<String, Object>> list = playerdao.getPaBallcount(number);
 		return list;
 	}
 
 	@Override
-	public List<PlayerHitEntity> getPaHowbase(int number) {
-		List<PlayerHitEntity> list = playerdao.getPaHowbase(number);
+	public List<List<HashMap<String, Object>>> getPaHowbase(int number) {
+		List<List<HashMap<String, Object>>> list = playerdao.getPaHowbase(number);
 		return list;
 	} 
 }

@@ -1,26 +1,21 @@
 package net.mcnal.mysterya.DAO;
 
+import java.util.HashMap;
 import java.util.List;
-
-import net.mcnal.mysterya.entity.PlayerEntity;
-import net.mcnal.mysterya.entity.PlayerHitEntity;
-import net.mcnal.mysterya.entity.PlayerSummaryEntity;
 
 public interface IPlayerDAO {
 	
-//	dispatcher-servlet 안쓸때
-//	Connection getConnection();
-	List<PlayerSummaryEntity> getSummaryLeague(int number);
-	List<PlayerSummaryEntity> getSummaryYear(int number);
-	List<PlayerSummaryEntity> getSummary(int number);
-	List<PlayerHitEntity> getPaBalltotal(int number);
-	List<PlayerHitEntity> getPaDirection(int number);
-	List<PlayerHitEntity> getPaOut(int number);
-	List<PlayerHitEntity> getPaTobase(int number);
-	List<PlayerHitEntity> getPaTurn(int number);
-	List<PlayerHitEntity> getPaETC(int number);
-	List<PlayerHitEntity> getPaBallcount(int number);
-	List<PlayerEntity> getPlayerList();
-	PlayerEntity getPlayerDetail(int number);
-	List<PlayerHitEntity> getPaHowbase(int number);
+	List<HashMap<String, Object>> getSummaryLeague(int number);
+	List<HashMap<String, Object>> getSummaryYear(int number);
+	List<HashMap<String, Object>> getSummary(int number);
+	List<HashMap<String, Object>> getPaBalltotal(int number);
+	List<HashMap<String, Object>> getPaDirection(int number);
+	List<HashMap<String, Object>> getPaOut(int number);
+	List<HashMap<String, Object>> getPaTobase(int number);
+	List<HashMap<String, Object>> getPaTurn(int number);
+	List<HashMap<String, Object>> getPaETC(int number);
+	List<HashMap<String, Object>> getPaBallcount(int number);
+	List<HashMap<String, Object>> getPlayerList();
+	HashMap<String, Object> getPlayerDetail(int number);
+	List<List<HashMap<String, Object>>> getPaHowbase(int number);
 }

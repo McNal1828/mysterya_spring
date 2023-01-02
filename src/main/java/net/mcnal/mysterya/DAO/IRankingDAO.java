@@ -2,9 +2,7 @@ package net.mcnal.mysterya.DAO;
 
 import java.util.List;
 
-import net.mcnal.mysterya.entity.PlayerEntity;
 import net.mcnal.mysterya.entity.PlayerHitEntity;
-import net.mcnal.mysterya.entity.PlayerSummaryEntity;
 import net.mcnal.mysterya.entity.RankingEntity;
 
 public interface IRankingDAO {

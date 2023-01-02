@@ -24,9 +24,7 @@ public class ListController implements Controller{
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest reqs, HttpServletResponse resp) throws Exception {
-		
 		int spnumber = 0;
-		
 		Cookie[] cookies = reqs.getCookies();
 		if(cookies != null) {
 			for(Cookie c: cookies) {

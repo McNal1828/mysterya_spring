@@ -3,13 +3,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <main class="container-xxl">
 	<div class="mb-5 pb-4">
-		<img src="/Mysterya/image/profile/${playerDetail.numberr}.jpg" class="rounded float-md-end img-thumbnail img-fluid" /> <img src="/Mysterya/image/support/${playerDetail.support}.${playerDetail.numberr==29?'gif':'png'}" class="rounded float-md-end" height="230" />
+		<img src="${pageContext.request.contextPath}/Mysterya/image/profile/${playerDetail.number}.jpg" class="rounded float-md-end img-thumbnail img-fluid" width="200" height="200" />
+		 <img src="${pageContext.request.contextPath}/Mysterya/image/support/${playerDetail.support}.${playerDetail.numberr==29?'gif':'png'}" class="rounded float-md-end" width="240" height="200" style="object-fit : contain" />
 		<p class="fs-3 pb-2 pt-4">${empty playerDetail.name?'저장된 번호가 없거나 잘못된 등번호입니다':playerDetail.name}</p>
-		<ul class="fs-5">
+<%-- 		<ul class="fs-5">
 			<li>${playerDetail.birth_year}- ${playerDetail.birth_month} - ${playerDetail.birth_day}</li>
 			<li>${playerDetail.element_school}- ${playerDetail.middle_school} - ${playerDetail.high_school} - ${playerDetail.university}</li>
 			<li>${playerDetail.handed}</li>
-		</ul>
+		</ul> --%>
 	</div>
 	<h4 class="pb-4 mb-4 mt-4 fw-bold fst-italic border-bottom">통산 기록</h4>
 	<div class="col-md-11 ms-auto me-auto">
@@ -35,27 +36,27 @@
 			<tbody>
 				<c:forEach var="ls" items="${listsummary}">
 					<tr>
-						<td>${ls.g}</td>
-						<td>${ls.pa}</td>
-						<td>${ls.ab}</td>
+						<td>${ls["경기수"]}</td>
+						<td>${ls["타석"]}</td>
+						<td>${ls["타수"]}</td>
 						<td>
-							<fmt:formatNumber value="${ls.avg}" pattern=".000" />
+							<fmt:formatNumber value="${ls['타율']}" pattern=".000" />
 						</td>
-						<td>${ls.h}</td>
-						<td>${ls._2b}</td>
-						<td>${ls._3b}</td>
-						<td>${ls.hr}</td>
-						<td>${ls.so}</td>
-						<td>${ls.bb}</td>
-						<td>${ls.hbp}</td>
+						<td>${ls["안타"]}</td>
+						<td>${ls["2루타"]}</td>
+						<td>${ls["3루타"]}</td>
+						<td>${ls["홈런"]}</td>
+						<td>${ls["삼진"]}</td>
+						<td>${ls["4구"]}</td>
+						<td>${ls["사구"]}</td>
 						<td>
-							<fmt:formatNumber value="${ls.slg}" pattern=".000" />
-						</td>
-						<td>
-							<fmt:formatNumber value="${ls.obp}" pattern=".000" />
+							<fmt:formatNumber value="${ls['장타율']}" pattern=".000" />
 						</td>
 						<td>
-							<fmt:formatNumber value="${ls.ops}" pattern=".000" />
+							<fmt:formatNumber value="${ls['출루율']}" pattern=".000" />
+						</td>
+						<td>
+							<fmt:formatNumber value="${ls['OPS']}" pattern=".000" />
 						</td>
 					</tr>
 				</c:forEach>
@@ -88,29 +89,29 @@
 			<tbody>
 				<c:forEach var="ll" items="${listLeague}">
 					<tr>
-						<th>${ll.league_name}</th>
-						<td>${ll.division}</td>
-						<td>${ll.g}</td>
-						<td>${ll.pa}</td>
-						<td>${ll.ab}</td>
+						<th>${ll["리그"]}</th>
+						<td>${ll["분류"]}</td>
+						<td>${ll["경기수"]}</td>
+						<td>${ll["타석"]}</td>
+						<td>${ll["타수"]}</td>
 						<td>
-							<fmt:formatNumber value="${ll.avg}" pattern=".000" />
+							<fmt:formatNumber value="${ll['타율']}" pattern=".000" />
 						</td>
-						<td>${ll.h}</td>
-						<td>${ll._2b}</td>
-						<td>${ll._3b}</td>
-						<td>${ll.hr}</td>
-						<td>${ll.so}</td>
-						<td>${ll.bb}</td>
-						<td>${ll.hbp}</td>
+						<td>${ll["안타"]}</td>
+						<td>${ll["2루타"]}</td>
+						<td>${ll["3루타"]}</td>
+						<td>${ll["홈런"]}</td>
+						<td>${ll["삼진"]}</td>
+						<td>${ll["4구"]}</td>
+						<td>${ll["사구"]}</td>
 						<td>
-							<fmt:formatNumber value="${ll.slg}" pattern=".000" />
-						</td>
-						<td>
-							<fmt:formatNumber value="${ll.obp}" pattern=".000" />
+							<fmt:formatNumber value="${ll['장타율']}" pattern=".000" />
 						</td>
 						<td>
-							<fmt:formatNumber value="${ll.ops}" pattern=".000" />
+							<fmt:formatNumber value="${ll['출루율']}" pattern=".000" />
+						</td>
+						<td>
+							<fmt:formatNumber value="${ll['OPS']}" pattern=".000" />
 						</td>
 					</tr>
 				</c:forEach>
@@ -142,28 +143,28 @@
 			<tbody>
 				<c:forEach var="ly" items="${listYear}">
 					<tr>
-						<th>${ly.year}</th>
-						<td>${ly.g}</td>
-						<td>${ly.pa}</td>
-						<td>${ly.ab}</td>
+						<th>${ly["년도"]}</th>
+						<td>${ly["경기수"]}</td>
+						<td>${ly["타석"]}</td>
+						<td>${ly["타수"]}</td>
 						<td>
-							<fmt:formatNumber value="${ly.avg}" pattern=".000" />
+							<fmt:formatNumber value="${ly['타율']}" pattern=".000" />
 						</td>
-						<td>${ly.h}</td>
-						<td>${ly._2b}</td>
-						<td>${ly._3b}</td>
-						<td>${ly.hr}</td>
-						<td>${ly.so}</td>
-						<td>${ly.bb}</td>
-						<td>${ly.hbp}</td>
+						<td>${ly["안타"]}</td>
+						<td>${ly["2루타"]}</td>
+						<td>${ly["3루타"]}</td>
+						<td>${ly["홈런"]}</td>
+						<td>${ly["삼진"]}</td>
+						<td>${ly["4구"]}</td>
+						<td>${ly["사구"]}</td>
 						<td>
-							<fmt:formatNumber value="${ly.slg}" pattern=".000" />
-						</td>
-						<td>
-							<fmt:formatNumber value="${ly.obp}" pattern=".000" />
+							<fmt:formatNumber value="${ly['장타율']}" pattern=".000" />
 						</td>
 						<td>
-							<fmt:formatNumber value="${ly.ops}" pattern=".000" />
+							<fmt:formatNumber value="${ly['출루율']}" pattern=".000" />
+						</td>
+						<td>
+							<fmt:formatNumber value="${ly['OPS']}" pattern=".000" />
 						</td>
 					</tr>
 				</c:forEach>
@@ -188,7 +189,7 @@
 		<div class="tab-content" id="nav-tabContent">
 			<div class="tab-pane fade show active" id="nav-padirection" role="tabpanel">
 
-				<div class="border border-2 mb-5" style="background-image: url('/Mysterya/image/field.png'); height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+				<div class="border border-2 mb-5" style="background-image: url('${pageContext.request.contextPath}/Mysterya/image/field.png'); height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
 					<div class="row justify-content-center">
 						<div class="col-3">
 							<div id=chart8></div>
@@ -247,17 +248,17 @@
 					<tbody>
 						<c:forEach var="lpt" items="${listPaTurn}">
 							<tr>
-								<td>${lpt.count1}타석</td>
-								<td>${lpt.count2}</td>
-								<td>${lpt.count3}</td>
+								<td>${lpt["타석 횟수"]}타석</td>
+								<td>${lpt["타석"]}</td>
+								<td>${lpt["타수"]}</td>
 								<td>
-									<fmt:formatNumber value="${lpt.ratio1}" pattern=".000" />
+									<fmt:formatNumber value="${lpt['타율']}" pattern=".000" />
 								</td>
-								<td>${lpt.count4}</td>
-								<td>${lpt.count5}</td>
-								<td>${lpt.count6}</td>
-								<td>${lpt.count7}</td>
-								<td>${lpt.count8}</td>
+								<td>${lpt["안타"]}</td>
+								<td>${lpt["사사구"]}</td>
+								<td>${lpt["삼진"]}</td>
+								<td>${lpt["땅볼 및 뜬공"]}</td>
+								<td>${lpt["상대방실책"]}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -275,10 +276,10 @@
 					<tbody>
 						<c:forEach var="lpbt" items="${listPaBalltotal}">
 							<tr>
-								<td>${lpbt.count1}구</td>
-								<td>${lpbt.count2}</td>
+								<td>${lpbt["공 갯수"]}구</td>
+								<td>${lpbt["타석"]}</td>
 								<td>
-									<fmt:formatNumber value="${lpbt.ratio1}" pattern=".000" />
+									<fmt:formatNumber value="${lpbt['타율']}" pattern=".000" />
 								</td>
 							</tr>
 						</c:forEach>
@@ -302,14 +303,14 @@
 					<tbody>
 						<c:forEach var="lpo" items="${listPaOut}">
 							<tr>
-								<td>${lpo.count1}</td>
-								<td>${lpo.count2}</td>
-								<td>${lpo.count3}</td>
-								<td>${lpo.count4}</td>
-								<td>${lpo.count5}</td>
-								<td>${lpo.count6}</td>
-								<td>${lpo.count7}</td>
-								<td>${lpo.count8}</td>
+								<td>${lpo["타수"]}</td>
+								<td>${lpo["총 아웃"]}</td>
+								<td>${lpo["루킹삼진"]}</td>
+								<td>${lpo["스윙삼진"]}</td>
+								<td>${lpo["땅볼"]}</td>
+								<td>${lpo["뜬공"]}</td>
+								<td>${lpo["직선타"]}</td>
+								<td>${lpo["실책"]}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -329,10 +330,10 @@
 					<tbody>
 						<c:forEach var="lptb" items="${listPaTobase}">
 							<tr>
-								<td>${lptb.count1}</td>
-								<td>${lptb.count2}</td>
-								<td>${lptb.count3}</td>
-								<td>${lptb.count4}</td>
+								<td>${lptb["총 출루"]}</td>
+								<td>${lptb["안타"]}</td>
+								<td>${lptb["4구"]}</td>
+								<td>${lptb["사구"]}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -352,13 +353,13 @@
 						<c:forEach var="lpetc" items="${listPaETC}">
 							<tr>
 								<td>
-									<fmt:formatNumber value="${lpetc.ratio1}" pattern=".000" />
+									<fmt:formatNumber value="${lpetc['K% : 타석당 삼진 비율']}" pattern=".000" />
 								</td>
 								<td>
-									<fmt:formatNumber value="${lpetc.ratio2}" pattern=".000" />
+									<fmt:formatNumber value="${lpetc['BB% : 타석당 볼넷 비율']}" pattern=".000" />
 								</td>
 								<td>
-									<fmt:formatNumber value="${lpetc.ratio3}" pattern=".000" />
+									<fmt:formatNumber value="${lpetc['K-BB% : 삼진-볼넷 비율 격차']}" pattern=".000" />
 								</td>
 							</tr>
 						</c:forEach>
@@ -384,17 +385,17 @@
 					<tbody>
 						<c:forEach var="lpbc" items="${listPaBallcount}">
 							<tr>
-								<td>${lpbc.str1}</td>
-								<td>${lpbc.count1}</td>
-								<td>${lpbc.count2}</td>
+								<td>${lpbc["볼카운트"]}</td>
+								<td>${lpbc["타석"]}</td>
+								<td>${lpbc["타수"]}</td>
 								<td>
-									<fmt:formatNumber value="${lpbc.ratio1}" pattern=".000" />
+									<fmt:formatNumber value="${lpbc['타율']}" pattern=".000" />
 								</td>
-								<td>${lpbc.count3}</td>
-								<td>${lpbc.count4}</td>
-								<td>${lpbc.count5}</td>
-								<td>${lpbc.count6}</td>
-								<td>${lpbc.count7}</td>
+								<td>${lpbc["안타"]}</td>
+								<td>${lpbc["사사구"]}</td>
+								<td>${lpbc["삼진"]}</td>
+								<td>${lpbc["땅볼 및 뜬공"]}</td>
+								<td>${lpbc["상대방실책"]}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -419,22 +420,42 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="lphb" items="${listPaHowbase}" end="1">
+						<c:forEach var="lphb" items="${listPaHowbase[0]}">
 							<tr>
-								<td>${lphb.str1}</td>
-								<td>${lphb.count1}</td>
-								<td>${lphb.count2}</td>
+								<td>${lphb["베이스"]}</td>
+								<td>${lphb["타석"]}</td>
+								<td>${lphb["타수"]}</td>
 								<td>
-									<fmt:formatNumber value="${lphb.ratio1}" pattern=".000" />
+									<fmt:formatNumber value="${lphb['타율']}" pattern=".000" />
 								</td>
-								<td>${lphb.count3}</td>
-								<td>${lphb.count4}</td>
-								<td>${lphb.count5}</td>
-								<td>${lphb.count6}</td>
-								<td>${lphb.count7}</td>
-								<td>${lphb.count8}</td>
-								<td>${lphb.count9}</td>
-								<td>${lphb.count10}</td>
+								<td>${lphb["단타"]}</td>
+								<td>${lphb["장타"]}</td>
+								<td>${lphb["사사구"]}</td>
+								<td>${lphb["삼진"]}</td>
+								<td>${lphb["땅볼 및 뜬공"]}</td>
+								<td>${lphb["병살 및 삼중살"]}</td>
+								<td>${lphb["상대방실책"]}</td>
+								<td>${lphb["타점"]}</td>
+							</tr>
+						</c:forEach>
+					<tbody>
+					<tbody>
+						<c:forEach var="lphb" items="${listPaHowbase[1]}">
+							<tr>
+								<td>${lphb["베이스"]}</td>
+								<td>${lphb["타석"]}</td>
+								<td>${lphb["타수"]}</td>
+								<td>
+									<fmt:formatNumber value="${lphb['타율']}" pattern=".000" />
+								</td>
+								<td>${lphb["단타"]}</td>
+								<td>${lphb["장타"]}</td>
+								<td>${lphb["사사구"]}</td>
+								<td>${lphb["삼진"]}</td>
+								<td>${lphb["땅볼 및 뜬공"]}</td>
+								<td>${lphb["병살 및 삼중살"]}</td>
+								<td>${lphb["상대방실책"]}</td>
+								<td>${lphb["타점"]}</td>
 							</tr>
 						</c:forEach>
 					<tbody>
@@ -455,22 +476,22 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="lphb" items="${listPaHowbase}" begin="2">
+						<c:forEach var="lphb" items="${listPaHowbase[2]}">
 							<tr>
-								<td>${lphb.str1}</td>
-								<td>${lphb.count1}</td>
-								<td>${lphb.count2}</td>
+								<td>${lphb["베이스"]}</td>
+								<td>${lphb["타석"]}</td>
+								<td>${lphb["타수"]}</td>
 								<td>
-									<fmt:formatNumber value="${lphb.ratio1}" pattern=".000" />
+									<fmt:formatNumber value="${lphb['타율']}" pattern=".000" />
 								</td>
-								<td>${lphb.count3}</td>
-								<td>${lphb.count4}</td>
-								<td>${lphb.count5}</td>
-								<td>${lphb.count6}</td>
-								<td>${lphb.count7}</td>
-								<td>${lphb.count8}</td>
-								<td>${lphb.count9}</td>
-								<td>${lphb.count10}</td>
+								<td>${lphb["단타"]}</td>
+								<td>${lphb["장타"]}</td>
+								<td>${lphb["사사구"]}</td>
+								<td>${lphb["삼진"]}</td>
+								<td>${lphb["땅볼 및 뜬공"]}</td>
+								<td>${lphb["병살 및 삼중살"]}</td>
+								<td>${lphb["상대방실책"]}</td>
+								<td>${lphb["타점"]}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -538,11 +559,11 @@
 			var temp3 = ["#00aeff"];
 	 		<c:forEach var="lpd" items="${listPaDirection}">
 				<c:choose>
-					<c:when test="${tt == lpd.count1}">
-						temp1 = [ "${lpd.str1}" ];
-						temp2 = [<fmt:formatNumber value="${lpd.ratio1}" pattern=".0"/>];
-						<c:if test="${lpd.ratio1>30 || lpd.ratio1<10}">
-							temp3 = ["${lpd.ratio1>30?'#ae00ff':'#ff8800'}"];
+					<c:when test="${tt == lpd['타구방향']}">
+						temp1 = [ "${lpd['포지션']}" ];
+						temp2 = [<fmt:formatNumber value="${lpd['비율']}" pattern=".0"/>];
+						<c:if test="${lpd['비율']>30 || lpd['비율']<10}">
+							temp3 = ["${lpd['비율']>30?'#ae00ff':'#ff8800'}"];
 						</c:if>	
 					</c:when>
 				</c:choose>
@@ -629,11 +650,11 @@
 		};
 
 		<c:forEach var="lpo" items="${listPaOut}">
-			var qq1 = test2( ["루킹삼진","스윙삼진","땅볼","뜬공","직선타"],[${lpo.count3},${lpo.count4}, ${lpo.count5}, ${lpo.count6}, ${lpo.count7}],"#ochart");
+			var qq1 = test2( ["루킹삼진","스윙삼진","땅볼","뜬공","직선타"],[${lpo["루킹삼진"]},${lpo["스윙삼진"]}, ${lpo["땅볼"]}, ${lpo["뜬공"]}, ${lpo["직선타"]}],"#ochart");
 	        qq1.render();
 		</c:forEach>
 		<c:forEach var="lptb" items="${listPaTobase}">
-			var qq2 = test2( ["안타","4구","사구"],[${lptb.count2}, ${lptb.count3}, ${lptb.count4}],"#obchart");
+			var qq2 = test2( ["안타","4구","사구"],[${lptb["안타"]}, ${lptb["4구"]}, ${lptb["사구"]}],"#obchart");
 	        qq2.render();
 		</c:forEach>
 

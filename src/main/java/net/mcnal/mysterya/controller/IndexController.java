@@ -7,13 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
 	@RequestMapping("/")
-	public void aaaa() {
-		
+	public String index() {
+		return "root.index";
 	}
-	/*
-	 * @Override public ModelAndView handleRequest(HttpServletRequest request,
-	 * HttpServletResponse response) throws Exception { ModelAndView mv = new
-	 * ModelAndView("root.index"); return mv; }
-	 */
-
 }
