@@ -2,9 +2,13 @@ package net.mcnal.mysterya.controller.player;
 
 import java.util.HashMap;
 
+import javax.servlet.http.Cookie;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,12 +26,20 @@ public class PlayerController {
 	private IPlayerSummaryService summaryService;
 	
 	@RequestMapping("list")
-	public String list(Model model) {
+	public String list(Model model,@CookieValue(value = "mynum", required = false) Cookie myNumCookie) {
 		model.addAttribute("listPlayer", listService.getPlayerList());
+		if(myNumCookie != null) {
+           String myNum = myNumCookie.getValue();
+           model.addAttribute("mynum", myNum);
+		}
 		return "player.list";
 	}
 	@RequestMapping({"summary/{number}","summary"})
-	public String detail(Model model, @PathVariable(required = false) String number) {
+	public String detail(Model model, @PathVariable(required = false) String number, @CookieValue(value = "mynum", required = false) Cookie myNumCookie) {
+		if(myNumCookie != null) {
+	           String myNum = myNumCookie.getValue();
+	           model.addAttribute("mynum", myNum);
+			}
 		int pnumber=0;
 		if(number != null) {
 			pnumber=Integer.parseInt(number);

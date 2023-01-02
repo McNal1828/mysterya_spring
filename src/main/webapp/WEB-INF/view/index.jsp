@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-md-6 ms-auto me-auto">
 			<h4 class="text-center">내 번호 저장하기</h4>
-			<form class="input-group mb-3" action="/Mysterya/" method="get">
+			<form class="input-group mb-3" action="${pageContext.request.contextPath}/" method="post">
 			  <input type="text" class="form-control" placeholder="등번호를 입력해주세요" aria-describedby="button-addon2" name="mynum"/>
 			  <input class="btn btn-outline-secondary" type="submit" id="button-addon2" onclick="alert(mynum.value + '번 저장완료!')" />
 			</form>
