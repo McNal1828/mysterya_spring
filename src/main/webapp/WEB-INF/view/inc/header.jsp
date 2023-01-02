@@ -21,7 +21,7 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="${pageContext.request.contextPath}">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/player/list">선수단</a></li>
-					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/player/summary?n=${smynum}">내정보</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/player/summary/${smynum}">내정보</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ranking/list">랭킹</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"

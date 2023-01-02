@@ -11,7 +11,7 @@
 				<div class="card-body">
 					<img src="${pageContext.request.contextPath}/Mysterya/image/support/${li.support}.png" class="img-fluid float-end" width="60" height="60">
 					<h5 class="card-title">No.${li.number}<br>${li.name}</h5>
-					<a href="${pageContext.request.contextPath}/player/summary?n=${li.number}" class="btn btn-dark">선택</a>
+					<a href="${pageContext.request.contextPath}/player/summary/${li.number}" class="btn btn-dark">선택</a>
 				</div>
 			</div>
 			</div>
