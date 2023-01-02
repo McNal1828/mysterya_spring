@@ -27,7 +27,7 @@ public class PlayerController {
 	private IPlayerSummaryService summaryService;
 	
 	@RequestMapping("/list")
-	public String list(Model model,@CookieValue(value = "mynum", required = false) Cookie myNumCookie,@RequestParam(name = "cat", defaultValue = "number") String cat,@RequestParam(name = "input", defaultValue = "") String input) {
+	public String list(Model model,@CookieValue(value = "mynum", required = false) Cookie myNumCookie,@RequestParam(name = "cat", defaultValue = "num") String cat,@RequestParam(name = "input", defaultValue = "") String input) {
 		model.addAttribute("listPlayer", listService.getPlayerList(cat, input));
 		if(myNumCookie != null) {
            String myNum = myNumCookie.getValue();

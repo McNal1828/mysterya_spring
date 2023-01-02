@@ -19,12 +19,10 @@ public class IndexController {
            String myNum = myNumCookie.getValue();
            model.addAttribute("mynum", myNum);
 		}
-		System.out.println("여기왓나1");
 		return "root.index";
 	}
 	@PostMapping("/")
 	public String setCookie(HttpServletResponse res,@RequestParam String mynum ) {
-		System.out.println("여기왓나");
 		Cookie myNumCookie = new Cookie("mynum",mynum);
 		myNumCookie.setPath("/");
 		myNumCookie.setMaxAge(7*24*60*60);

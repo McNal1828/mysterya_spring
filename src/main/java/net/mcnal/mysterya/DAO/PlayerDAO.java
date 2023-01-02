@@ -112,8 +112,12 @@ public class PlayerDAO implements IPlayerDAO {
 	@Override
 	public List<HashMap<String, Object>> getPlayerList(String cat, String input) {
 		System.out.println("getPlayerList");
-		/* String sql = "SELECT * FROM player"; */
 		String sql = String.format("select * from player where %s like '%%%s%%'",cat,input);
+		if(cat.equals("num")) {
+			cat = "number";
+			sql = String.format("select * from player where %s like '%%%s%%'",cat,input);
+		}
+		System.out.println(sql);
 		List<HashMap<String, Object>> list = querySTResult(sql);
 		return list;
 	}

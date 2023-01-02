@@ -34,12 +34,12 @@
 							<li><a class="dropdown-item" href="#">추가정보</a></li>
 						</ul></li>
 				</ul>
-				<form class="d-flex">
-					<select class="form-select-sm" id="autoSizingSelect">
-						<option selected value="num">등번호</option>
-						<option value="name">이름</option>
+				<form class="d-flex" action="${pageContext.request.contextPath}/player/list" method="get">
+					<select class="form-select-sm" id="autoSizingSelect" name="cat">
+						<option ${(param.cat == "num")?"selected":""} value="num">등번호</option>
+						<option ${(param.cat == "name")?"selected":""} value="name">이름</option>
 					</select> <input class="form-control me-2" type="search"
-						placeholder="Search" aria-label="Search" />
+						placeholder="Search" aria-label="Search" name="input" value="${param.input}" />
 					<button class="btn btn-outline-success" type="submit">
 						Search</button>
 				</form>
