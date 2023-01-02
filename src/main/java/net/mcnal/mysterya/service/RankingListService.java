@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.mcnal.mysterya.DAO.IRankingDAO;
-import net.mcnal.mysterya.entity.PlayerHitEntity;
-import net.mcnal.mysterya.entity.RankingEntity;
 
 @Service
 public class RankingListService implements IRankingListService{
